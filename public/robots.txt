@@ -1,0 +1,22 @@
+User-Agent: Googlebot
+Disallow: /*?*
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php
+Allow: /*.css?
+Allow: /*.js?
+
+User-Agent: Yandex
+Disallow: /*?*
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php
+Host: solidair.ru
+
+User-agent: *
+Disallow: /*?*
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php
+
+Sitemap: http://solidair.ru/sitemap.xml

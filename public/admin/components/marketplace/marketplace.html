@@ -1,0 +1,305 @@
+<div class="row" ng-controller="MarketplaceCtrl as ctrl" ng-cloak>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header" data-background-color="orange">
+
+                <h3 class="title">{{ctrl.title}}</h3>
+            </div>
+            <div class="card-content">
+
+
+
+
+                <md-content>
+                    <md-tabs md-dynamic-height md-border-bottom>
+                        <md-tab label="Создать товар">
+                            <md-content class="md-padding">
+
+
+
+
+                                <form name="userForm">
+
+
+                                <md-input-container class="md-block">
+                                    <label>Заголовок</label>
+                                    <input placeholder="Придумай интересный заголовок..." ng-model="ctrl.titleproduct" autofocus>
+                                </md-input-container>
+
+
+
+
+
+
+
+
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+
+                                        <md-input-container class="md-block">
+
+                                                    <div id="standalone-container">
+                                                        <div id="toolbar-container">
+
+                                <span class="ql-formats">
+      <button class="ql-bold"></button>
+      <button class="ql-italic"></button>
+      <button class="ql-underline"></button>
+      <button class="ql-strike"></button>
+    </span>
+
+
+                                                            <span class="ql-formats">
+      <button class="ql-header" value="1"></button>
+      <button class="ql-header" value="2"></button>
+      <button class="ql-blockquote"></button>
+
+    </span>
+                                                            <span class="ql-formats">
+      <button class="ql-list" value="ordered"></button>
+      <button class="ql-list" value="bullet"></button>
+
+    </span>
+                                                            <span class="ql-formats">
+
+      <select class="ql-align"></select>
+    </span>
+                                                            <span class="ql-formats">
+      <button class="ql-link"></button>
+
+
+    </span>
+                                                            <span class="ql-formats">
+      <button class="ql-clean"></button>
+    </span>
+                                                        </div>
+                                                        <div id="editor-container"></div>
+                                                    </div>
+
+
+
+
+                                        </md-input-container>
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+
+
+                                <div class="row categclass">
+
+                                    <div class="col-md-12">
+
+                                        <md-input-container class="md-block">
+                                            <label class="productcategory">Выбери категорию товара</label>
+                                            <md-select ng-model="ctrl.userCategory">
+
+                                                <md-option ng-repeat="product in ctrl.categorys" ng-value="product._id">
+                                                    {{product.name}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+
+
+
+                                    </div>
+
+
+
+
+                                </div>
+
+                                    <div class="row categclass">
+
+                                        <div class="col-md-12">
+
+                                            <md-input-container class="md-block">
+                                                <label class="productcategory">Выбери субкатегорию товара</label>
+                                                <md-select ng-model="ctrl.userSubCategory">
+
+                                                    <md-option ng-repeat="product in ctrl.subCategory | filter: {category: ctrl.userCategory }" ng-value="product.id">
+                                                        {{product.name}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+
+
+
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+
+
+
+
+
+                                    <md-input-container class="md-block">
+                                        <label>Стоимость товара в (EUR)</label>
+                                        <input ng-model="ctrl.rate" type="number" step="any" name="rate">
+
+
+
+
+
+                                    </md-input-container>
+
+
+
+
+
+
+                                    <div class="row productimgrow">
+
+                                    <div class="col-md-12">
+
+                                        <div class="input-group">
+										<span class="input-group-addon">
+											<i class="productimg" style="background-color: #c72121; color: white">
+
+
+                                               Обязательно загрузите:
+                                                <br>
+                                                <br>
+                                              Одно изображение (формат jpg или png),
+                                                <br>
+                                                <br>
+                                              Один PDF документ,
+                                                <br>
+                                                <br>
+
+
+
+                                           Один Excel документ (формат xlsx или xls).
+
+
+                                            </i>
+										</span>
+
+
+
+
+                                            <input ng-files="ctrl.getTheFiles($files)" id="file" type="file" class="form-control" accept="image/*, application/pdf, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple/>
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+
+
+                                    <div class="row savebtn">
+
+                                    <div class="col-md-1 pull-left">
+
+                                        <md-button class="md-raised md-primary" ng-click="ctrl.uploadFiles()">Сохранить</md-button>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                </form>
+                            </md-content>
+                        </md-tab>
+
+                        <md-tab label="Редактировать товары" ng-click="ctrl.btnTab()">
+                            <md-content class="md-padding">
+
+
+
+
+
+
+                                <md-toolbar class="md-table-toolbar alternate" ng-show="ctrl.options.rowSelection && $root.selected.length">
+                                    <div class="md-toolbar-tools">
+                                        <span>{{$root.selected.length}} {{$root.selected.length > 1 ? 'товаров' : 'товар'}} выбрана</span>
+                                        <span flex></span>
+                                        <md-button class="md-icon-button" ng-click="ctrl.delete(ctrl.selected)">
+                                            <i class="material-icons">delete</i>
+                                        </md-button>
+
+
+                                        <md-button class="md-icon-button" ng-click="ctrl.showAdvanced($event)">
+                                            <i class="material-icons">update</i>
+                                        </md-button>
+
+
+                                    </div>
+                                </md-toolbar>
+
+
+
+                                <!-- exact table from live demo -->
+                                <md-table-container>
+                                    <table md-table md-row-select multiple ng-model="$root.selected">
+                                        <thead md-head>
+                                        <tr md-row>
+                                            <th md-column>ID</th>
+                                            <th md-column>Название товара</th>
+                                            <th md-column>Дата создания</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="data" md-select-id="id" md-auto-select ng-repeat="data in $root.data">
+                                            <td md-cell>{{data._id}}</td>
+
+                                            <td md-cell>{{data.title}}</td>
+                                            <td md-cell>{{data.createAt}}</td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+
+
+
+
+
+                            </md-content>
+                        </md-tab>
+
+
+
+
+
+
+
+
+                    </md-tabs>
+                </md-content>
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+

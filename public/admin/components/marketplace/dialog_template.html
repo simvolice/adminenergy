@@ -1,0 +1,283 @@
+
+
+
+
+<md-dialog class="fullscreen-dialog" aria-label="Создать статью">
+
+
+
+
+
+
+    <form ng-cloak class="modal-form">
+        <md-toolbar class="md-toolbar-tools">
+
+                <h2>Редактировать товар</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="closeDialog()">
+                    <i class="material-icons">close</i>
+                </md-button>
+
+        </md-toolbar>
+
+
+        <md-dialog-content class="modalnew">
+            <div class="md-dialog-content">
+
+
+
+
+                <md-content class="md-padding">
+
+
+
+
+                    <form name="userForm">
+
+
+                        <md-input-container class="md-block">
+                            <label>Заголовок</label>
+                            <input placeholder="Придумай интересный заголовок..." ng-model="titleproduct" autofocus>
+                        </md-input-container>
+
+
+
+
+
+
+
+
+                        <div class="row">
+
+
+                            <div class="col-md-12">
+
+                                <md-input-container class="md-block">
+                                    <label>Описание товара</label>
+                                    <textarea name="productdescription" ng-model="textproduct" rows="5" md-select-on-focus placeholder="Придумай интересное описание товара..."></textarea>
+
+
+
+
+
+
+                                </md-input-container>
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+                        <div class="row categclass">
+
+                            <div class="col-md-12">
+
+                                <md-input-container class="md-block">
+                                    <label class="productcategory">Выбери категорию товара</label>
+                                    <md-select ng-model="userCategory">
+
+                                        <md-option ng-repeat="product in categorys" ng-value="product._id">
+                                            {{product.name}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div class="row categclass">
+
+                            <div class="col-md-12">
+
+                                <md-input-container class="md-block">
+                                    <label class="productcategory">Выбери субкатегорию товара</label>
+                                    <md-select ng-model="userSubCategory">
+
+                                        <md-option ng-repeat="product in subCategory | filter: {category: userCategory }" ng-value="product.id">
+                                            {{product.name}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <md-input-container class="md-block">
+                            <label>Стоимость товара в (EUR)</label>
+                            <input ng-model="rate" step="any" name="rate">
+
+
+
+
+
+                        </md-input-container>
+
+                        <div class="row productimgrow">
+
+                            <div class="col-md-12">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon">
+											<i class="productimg">Изображение товара: </i>
+										</span>
+
+                                    <img ng-src="{{img}}" height="100" width="200">
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="row productimgrow">
+
+                            <div class="col-md-12">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon">
+											<i class="productimg">PDF товара: </i>
+										</span>
+
+                                    <span ng-show="!pdf">Нет брошюры</span>
+
+                                    <a ng-href="{{pdf}}" target="_blank" style="color: black" ng-show="pdf">Брошюра товара в PDF</a>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="row productimgrow">
+
+                            <div class="col-md-12">
+
+                                <div class="input-group">
+										<span class="input-group-addon">
+											<i class="productimg">Выбери одно изображение, pdf или excel</i>
+										</span>
+                                    <input ng-files="getTheFiles($files)" id="file" type="file" class="form-control" accept="image/*, application/pdf" multiple/>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="row productimgrow">
+
+                            <div class="col-md-12">
+
+                                <div class="input-group">
+
+
+
+                                    <span class="input-group-addon">
+											<i class="productimg">Текущая таблица.</i>
+										</span>
+
+
+                                    <table class="table">
+                                        <thead >
+                                        <tr>
+                                            <th ng-repeat="head in column">{{head}}</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr >
+                                            <td ng-repeat="val in valueForColumn">{{val}}</td>
+
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+
+
+
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="row savebtn">
+
+                            <div class="col-md-1 pull-left">
+
+                                <md-button class="md-raised md-primary" ng-click="uploadFiles()">Сохранить</md-button>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </form>
+                </md-content>
+
+
+
+
+
+
+
+            </div>
+        </md-dialog-content>
+
+
+    </form>
+</md-dialog>

@@ -1,0 +1,164 @@
+<div class="row" ng-controller="ClientCtrl as ctrl" ng-cloak>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header" data-background-color="orange">
+
+                <h3 class="title">{{ctrl.title}}</h3>
+            </div>
+            <div class="card-content">
+
+
+
+
+                <md-content>
+                    <md-tabs md-dynamic-height md-border-bottom>
+                        <md-tab label="Добавить клиента">
+                            <md-content class="md-padding">
+
+
+
+
+                                <form name="userForm">
+
+
+                                    <md-input-container class="md-block">
+                                        <label>Заголовок</label>
+                                        <input placeholder="Придумай интересный заголовок..." ng-model="ctrl.titleclient" autofocus>
+                                    </md-input-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <div class="row productimgrow">
+
+                                        <div class="col-md-12">
+
+                                            <div class="input-group">
+
+
+
+
+
+                                                <input ng-files="ctrl.getTheFiles($files)" id="file" type="file" class="form-control" accept="image/*"/>
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+
+
+
+                                    <div class="row savebtn">
+
+                                        <div class="col-md-1 pull-left">
+
+                                            <md-button class="md-raised md-primary" ng-click="ctrl.uploadFiles()">Сохранить</md-button>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                </form>
+                            </md-content>
+                        </md-tab>
+
+                        <md-tab label="Редактировать клиентов" ng-click="ctrl.btnTab()">
+                            <md-content class="md-padding">
+
+
+
+
+
+
+                                <md-toolbar class="md-table-toolbar alternate" ng-show="ctrl.options.rowSelection && ctrl.selected.length">
+                                    <div class="md-toolbar-tools">
+                                        <span>{{ctrl.selected.length}} {{ctrl.selected.length > 1 ? 'товаров' : 'товар'}} выбрана</span>
+                                        <span flex></span>
+                                        <md-button class="md-icon-button" ng-click="ctrl.delete(ctrl.selected)">
+                                            <i class="material-icons">delete</i>
+                                        </md-button>
+
+
+
+
+
+                                    </div>
+                                </md-toolbar>
+
+
+
+                                <!-- exact table from live demo -->
+                                <md-table-container>
+                                    <table md-table md-row-select multiple ng-model="ctrl.selected">
+                                        <thead md-head>
+                                        <tr md-row>
+                                            <th md-column>ID</th>
+                                            <th md-column>Название</th>
+                                            <th md-column>Дата создания</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="data" md-select-id="id" md-auto-select ng-repeat="data in ctrl.data">
+                                            <td md-cell>{{data._id}}</td>
+
+                                            <td md-cell>{{data.title}}</td>
+                                            <td md-cell>{{data.createAt}}</td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+
+
+
+
+
+                            </md-content>
+                        </md-tab>
+
+
+
+
+
+
+
+
+                    </md-tabs>
+                </md-content>
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+

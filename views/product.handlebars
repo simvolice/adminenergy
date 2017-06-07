@@ -1,0 +1,231 @@
+<div class="l-titlebar size_large color_alternate">
+    <div class="l-titlebar-h i-cf">
+
+
+        <nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
+
+
+            <a href="/">Главная</a>
+
+            &nbsp;&#47;&nbsp;
+
+
+            <a href="/category?id={{data.categorys}}">{{data.categName}}</a>
+
+            &nbsp;&#47;&nbsp;
+
+
+            <a href="/grid?id={{data.subcategory}}&catid={{data.categorys}}">{{data.subCategName}}</a>
+
+            &nbsp;&#47;&nbsp;
+
+
+            {{data.title}}
+
+
+
+        </nav>
+    </div>
+</div>
+
+
+<div class="l-main"><div class="l-main-h i-cf"><div class="l-content g-html"><section class="l-section for_shop"><div class="l-section-h i-cf">
+
+
+
+
+    <div itemscope="" itemtype="http://schema.org/Product" id="product-4545" class="post-4545 product type-product status-publish has-post-thumbnail product_cat-dlya-promyshlennyx-predpriyatij first instock shipping-taxable purchasable product-type-simple">
+
+        <div class="left-block">
+
+            <div class="images">
+
+                <a href="{{data.img}}" itemprop="image" class="woocommerce-main-image " title=""><img width="580" height="599" src="{{data.img}}" class="attachment-shop_single size-shop_single wp-post-image" alt="{{data.title}}" title="{{data.title}}" sizes="(max-width: 580px) 100vw, 580px"></a>
+
+
+
+
+
+
+
+            </div>
+
+
+            <div class="clearfix"></div>
+            <div class="middle-delivery">
+                <a href="http://solidair.ru/compressors/porshnevye-kompressory/dlya-promyshlennyx-predpriyatij/mobilnyj-porshnevoj-kompressor-soliddrive-600/#contact_form7_pop_sq" class="fancybox-inline btn btn-primary">
+                    Заказать этот товар
+                </a>
+            </div>
+
+            <div style="display:none" class="fancybox-hidden">
+                <div id="contact_form7_pop_sq">
+                    <strong>Узнать по наличию товара:</strong> <span class="request-form-title">{{data.title}}</span>
+                    <div role="form" class="wpcf7" id="wpcf7-f4468-p4545-o1" lang="ru-RU" dir="ltr">
+                        <div class="screen-reader-response"></div>
+                        <form class="wpcf7-form" novalidate="novalidate">
+                            <div style="display: none;">
+                                <input type="hidden" name="_wpcf7" value="4468">
+                                <input type="hidden" name="_wpcf7_version" value="4.6.1">
+                                <input type="hidden" name="_wpcf7_locale" value="ru_RU">
+                                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4468-p4545-o1">
+                                <input type="hidden" name="_wpnonce" value="6b2cfd6715">
+                            </div>
+                            <p>Ваше имя<br>
+                                <span class="wpcf7-form-control-wrap text-799"><input type="text" name="fio" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"></span> </p>
+                            <p>Ваш e-mail (обязательно)<br>
+                                <span class="wpcf7-form-control-wrap email-734"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false"></span> </p>
+                            <p>Ваша организация (обязательно)<br>
+                                <span class="wpcf7-form-control-wrap text-650"><input type="text" name="org" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"></span> </p>
+                            <p>Телефон (обязательно)<br>
+                                <span class="wpcf7-form-control-wrap tel-577"><input type="tel" name="tel" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false"></span></p>
+                            <input type="hidden" name="hidden-869" value="http://solidair.ru/compressors/porshnevye-kompressory/dlya-promyshlennyx-predpriyatij/mobilnyj-porshnevoj-kompressor-soliddrive-600/" class="wpcf7-form-control wpcf7-hidden">
+                            <input type="hidden" name="nameprod" value="{{data.title}}" class="wpcf7-form-control wpcf7-hidden">
+
+                            <!--<div class="g-recaptcha" data-sitekey="6LeEmCIUAAAAANQcrl8vCJWKPBchWtU_MMiSlgZJ"></div>-->
+
+                            <p><input id="btn" type="submit" value="Отправить запрос" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></p>
+                            <div class="wpcf7-response-output wpcf7-display-none"></div></form></div>		</div>
+            </div>
+        </div>
+
+
+        <div class="summary entry-summary">
+            <article>
+                <h1 itemprop="name" class="product_title entry-title">{{data.title}}</h1>
+                <div itemprop="description">
+                    <p>{{{data.description}}}</p>
+
+                    <p><a href="{{data.pdf}}" target="_blank"><img class="pdf-ico" src="wp-content/uploads/pdficon.gif" alt="" width="16" height="16">Брошюра</a></p>
+                </div>
+                <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+
+                    <div class="price-euro">Цена в евро: <span>{{data.rate}} €</span></div>
+                    <div class="price-rb">Цена в рублях по курсу ЦБ, за {{data.dateRate}}: <span><span class="woocommerce-Price-amount amount">{{data.rateRUB}}&nbsp;<span class="woocommerce-Price-currencySymbol"><span class="rur">р<span>уб.</span></span></span></span></span></div>
+
+                    <meta itemprop="price" content="{{data.rateRUB}}">
+                    <meta itemprop="priceCurrency" content="RUB">
+                    <link itemprop="availability" href="http://schema.org/InStock">
+
+                </div>
+            </article>
+
+        </div><!-- .summary -->
+
+
+
+
+        <meta itemprop="url" content="/product?id={{data._id}}">
+
+    </div><!-- #product-4545 -->
+
+
+    <div class="clearfix"></div>
+
+
+
+    <div class="woocommerce-tabs wc-tabs-wrapper">
+        <ul class="tabs wc-tabs">
+            <li class="description_tab active">
+                <a href="/product?id={{data._id}}">Описание</a>
+            </li>
+        </ul>
+
+
+        <div class="panel entry-content wc-tab" id="tab-description" style="display: block;">
+
+            <h2>Описание товара</h2>
+
+
+            <div class="table-responsive" style="max-width: 100%; overflow: auto;">
+
+            <table class="main-table-compressor">
+                <tbody>
+                <tr>
+                {{#each data.column}}
+
+
+                        <th style="text-align: center;">{{this}}</th>
+
+
+
+                {{/each}}
+
+                </tr>
+
+
+
+                <tr>
+                    <th style="text-align: center;" height="20"></th>
+
+                    {{#each data.units}}
+
+
+                        <th style="text-align: center;">{{this}}</th>
+
+
+
+                    {{/each}}
+
+
+
+                </tr>
+
+
+
+                <tr>
+                {{#each data.valueForColumn}}
+
+
+
+                        <td style="text-align: center;">{{this}}</td>
+
+
+
+
+
+
+
+
+
+                {{/each}}
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
+
+            </div>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+
+
+    <div class="upsells products">
+
+        <h2>Возможно Вас также заинтересует…</h2>
+
+        <ul class="products">
+
+
+
+
+            {{> page/goods}}
+
+
+
+
+
+
+
+        </ul>
+    </div>
+
+
+
+
+
+</div></section></div></div></div>
+

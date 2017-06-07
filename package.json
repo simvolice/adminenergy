@@ -1,0 +1,45 @@
+{
+  "name": "adminenergy",
+  "version": "1.0.4",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simvolice/adminenergy.git"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect",
+    "version:patch": "npm version patch"
+  },
+  "dependencies": {
+    "async-busboy": "^0.5.0",
+    "async-request": "^1.2.0",
+    "bcryptjs": "^2.4.0",
+    "body-parser": "~1.17.1",
+    "busboy": "^0.2.14",
+    "cors": "^2.8.1",
+    "debug": "~2.2.0",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "fs-extra": "^2.1.2",
+    "helmet": "^3.2.0",
+    "jsonwebtoken": "^7.2.1",
+    "mongodb": "^2.2.16",
+    "morgan": "~1.7.0",
+    "nodemailer": "^2.7.0",
+    "nodemailer-express-handlebars": "^2.0.0",
+    "request": "^2.81.0",
+    "serve-favicon": "~2.3.0",
+    "snyk": "^1.24.6",
+    "uuid": "^3.0.1",
+    "xlsx": "^0.10.3",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0"
+  },
+  "snyk": true
+}

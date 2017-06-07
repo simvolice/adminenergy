@@ -1,0 +1,126 @@
+
+<div class="l-titlebar size_large color_alternate"><div class="l-titlebar-h i-cf"><h1>{{data.name}}</h1>
+
+    <div class="g-breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+
+		<span class="g-breadcrumbs-item">
+					<a href="/">Главная</a>
+		</span>
+        <span class="g-breadcrumbs-separator"></span>
+
+        <span class="g-breadcrumbs-item">
+					{{data.name}}
+		</span>
+
+
+    </div>
+</div></div>
+
+
+<div class="l-main"><div class="l-main-h i-cf"><div class="l-content g-html"><section class="l-section for_shop"><div class="l-section-h i-cf">
+
+    <div class="term-description"><p>{{data.description}}</p>
+    </div>
+
+
+    <ul class="products">
+
+
+
+        {{#if subcat}}
+
+
+
+            {{#each data.subcategory}}
+
+                <li class="product-category product">
+                    <a href="/grid?id={{this.id}}&catid={{this.category}}">
+                        <a href="/grid?id={{this.id}}&catid={{this.category}}">
+
+                            <img src="{{this.img}}" alt="{{this.name}}" width="300" height="300" />
+                            <h3>{{this.name}}<mark class="count">({{this.count}})</mark></h3>
+
+
+                        </a>
+
+                    </a></li>
+
+            {{/each}}
+
+        {{else}}
+
+
+
+
+            {{#each product}}
+
+
+
+
+
+
+                <li class="first post-4624 product type-product status-publish has-post-thumbnail product_cat-kompressornye-ustanovki-na-resivere  instock shipping-taxable purchasable product-type-simple">
+
+                    <a href="/product?id={{this._id}}" class="woocommerce-LoopProduct-link"></a><div class="product-h"><a href="/product?id={{this._id}}" class="woocommerce-LoopProduct-link">
+                </a><a href="/product?id={{this._id}}">
+
+                    <img width="300" height="300" src="{{this.img}}" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="{{this.title}}" title="{{this.title}}" sizes="(max-width: 300px) 100vw, 300px" style="max-height: 180px; height: 130px"></a><div class="product-meta"><a href="/product?id={{this._id}}"><h3>{{this.title}}</h3>
+                    <ul class="product-attributes"><li><div class="left">Производительность, м<sup>3</sup>/мин</div><div class="right">{{this.powerPressurization}}</div></li><li><div class="left">Давление, бар</div><div class="right">{{this.pressure}}</div></li><li><div class="left">Мощность, кВт</div><div class="right">{{this.power}}</div></li><li><div class="left">Объем ресивера, л</div><div class="right">{{this.amountResivera}}</div></li></ul>
+                </a>
+
+
+                    <div class="price-eur-lp">{{this.rate}} €</div>
+                    <div class="price-rub-lp"><span class="woocommerce-Price-amount amount">{{this.rateRUB}}&nbsp;<span class="woocommerce-Price-currencySymbol"><span class="rur">р<span>уб.</span></span></span></span></div>
+                </div>
+
+
+
+
+
+
+                </div>
+
+
+
+                </li>
+
+
+
+
+
+            {{/each}}
+
+
+
+
+
+
+
+
+
+        {{/if}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
+
+
+</div></section></div></div></div>

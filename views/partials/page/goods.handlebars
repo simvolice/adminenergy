@@ -1,0 +1,42 @@
+{{#each product}}
+
+
+    <li class="first post-4513 product type-product status-publish has-post-thumbnail product_cat-dlya-promyshlennyx-predpriyatij product_cat-porshnevye-kompressory  instock shipping-taxable purchasable product-type-simple">
+
+        <a href="/product?id={{this._id}}" class="woocommerce-LoopProduct-link"></a><div class="product-h"><a href="/product?id={{this._id}}" class="woocommerce-LoopProduct-link">
+    </a><a href="/product?id={{this._id}}">
+
+        <img width="300" height="300" src="{{this.img}}" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="{{this.title}}" title="{{this.title}}" style="height: 250px"></a><div class="product-meta"><a href="/product?id={{this._id}}"><h3>{{this.title}}</h3>
+        <ul class="product-attributes">
+
+            {{#each this.fourProduct}}
+
+               {{#each this}}
+
+
+
+
+                   <li><div class="left">{{{trimString @key}}}</div><div class="right">{{this}}</div></li>
+
+
+
+
+
+
+                {{/each}}
+
+
+            {{/each}}
+
+
+        </ul>
+    </a>
+
+
+        <div class="price-eur-lp">{{this.rate}} €</div>
+        <div class="price-rub-lp"><span class="woocommerce-Price-amount amount">{{this.rateRUB}}&nbsp;<span class="woocommerce-Price-currencySymbol"><span class="rur">р<span>уб.</span></span></span></span></div>
+    </div><a href="http://solidair.ru/compressors/porshnevye-kompressory/dlya-promyshlennyx-predpriyatij/mobilnyj-porshnevoj-kompressor-soliddrive-600/?add-to-cart=4513" rel="nofollow" data-product_id="4513" data-product_sku="" data-quantity="1" class="button add_to_cart_button product_type_simple">Добавить в корзину</a></div>
+    </li>
+
+
+{{/each}}

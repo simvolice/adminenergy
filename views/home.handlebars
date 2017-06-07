@@ -1,0 +1,238 @@
+<!-- MAIN -->
+<div class="l-main">
+    <div class="l-main-h i-cf">
+
+        <div class="l-content g-html">
+
+
+            <section class="l-section wpb_row height_medium imgsize_cover vc_row-fluid"><div class="l-section-h g-html i-cf"><div class="g-cols offset_small">
+
+
+
+
+                {{#each category}}
+
+                    <div class=" one-third"><div class="ult-new-ib ult-ib-effect-style2 ult-ib-resp " data-min-width="768" data-max-width="900" style="" data-opacity="1" data-hover-opacity="1" ><img class="ult-new-ib-img" style="opacity:1;" alt="{{this.name}}" src="{{this.imgForMainPage}}"/><div class="ult-new-ib-desc" style=""><h2 class="ult-new-ib-title" style="font-weight:normal;color:#ffffff;">{{this.name}}</h2><div class="ult-new-ib-content" style="font-weight:normal;color:#ffffff;"><p>{{this.textMainPage}}</p></div></div><a class="ult-new-ib-link" href="/category?id={{this._id}}" ></a></div></div>
+
+                {{/each}}
+
+
+
+
+
+
+
+
+
+
+            </div></div>
+
+
+
+            </section>
+
+
+
+
+            <section class="l-section wpb_row height_medium color_alternate imgsize_cover vc_row-fluid"><div class="l-section-h g-html i-cf"><div class="g-cols offset_small"><div class=" full-width"><div class="wpb_text_column "><div class="wpb_wrapper">
+
+
+
+
+
+
+
+
+            <h2 style="text-align: center;">Надежный компрессор по демократичной цене.</h2>
+            <p style="text-align: center;">Компания Энерготехнка поставляет и обслуживает винтовые и поршневые компрессоры SOLIDair - второго бренда немецкого BOGE Group. Компрессоры SOLIDair отличаются конкурентоспособностью и демократичными ценами.</p>
+        </div> </div> </div></div></div></section><section class="l-section wpb_row height_medium imgsize_cover vc_row-fluid"><div class="l-section-h g-html i-cf"><div class="g-cols offset_small"><div class=" one-quarter"><div class="w-iconbox iconpos_top size_medium style_outlined color_secondary"><a class="w-iconbox-link" href="#"><div class="w-iconbox-icon"><i class="fa fa-shield"></i></div><h4 class="w-iconbox-title">Надежность</h4></a><div class="w-iconbox-text">
+            <p>Компрессоры SOLIDair от известного производителя <a href="http://kkt.su/" target="_blank" rel="nofollow">компрессорной техники BOGE</a>, передовые технологии и немецкое качество.</p>
+        </div></div></div><div class=" one-quarter"><div class="w-iconbox iconpos_top size_medium style_outlined color_primary"><a class="w-iconbox-link" href="#"><div class="w-iconbox-icon"><i class="fa fa-thumbs-o-up"></i></div><h4 class="w-iconbox-title">Качество</h4></a><div class="w-iconbox-text">
+            <p>Высокое качество компрессоров SOLIDair, подтверждено десятками тысяч часов эксплуатации.</p>
+        </div></div></div><div class=" one-quarter"><div class="w-iconbox iconpos_top size_medium style_outlined color_primary"><a class="w-iconbox-link" href="#"><div class="w-iconbox-icon"><i class="fa fa-gears"></i></div><h4 class="w-iconbox-title">100% Безмасляный</h4></a><div class="w-iconbox-text">
+            <p>Разработаны специально для высоко требовательных производств, где требуется 100% безмасляный воздух.</p>
+        </div></div></div><div class=" one-quarter"><div class="w-iconbox iconpos_top size_medium style_outlined color_primary"><a class="w-iconbox-link" href="#"><div class="w-iconbox-icon"><i class="fa fa-money"></i></div><h4 class="w-iconbox-title">Низкая цена</h4></a><div class="w-iconbox-text">Компрессоры отличаются низкой стоимостью и высокой производительностью.</p>
+        </div></div></div></div></div></section><section class="l-section wpb_row height_medium imgsize_cover vc_row-fluid"><div class="l-section-h g-html i-cf"><div class="g-cols offset_small"><div class=" full-width"><div class="woocommerce"></div><div id="woo-carousel-591d3fb3ea799" class="woocomposer_carousel"><div class="woocomposer " data-columns="4">
+
+
+            {{#each product}}
+
+                <div id="product-591d3fb3ec686" style="" class=" wpb_column column_container wooproduct" data-animation="animated no-animation"><div class="wcmp-carousel-item">
+                    <div class="wcmp-product woocommerce wcmp-style01 wcmp-img-zoomin" style=" ">
+                        <div class="wcmp-product-image"><a href="/product?id={{this._id}}"><img class="wcmp-img" src="{{this.img}}" data-src="{{this.img}}" style="height: 250px"/></a><div class="wcmp-add-to-cart" style=""><a style="" title="Add to Cart" href="#" rel="nofollow" data-product_id="4274" data-product_sku="" class="add_to_cart_button product_type_simple"><i class="wooicon-cart4"></i></a></div></div>
+                        <div class="wcmp-product-desc" style="text-align:left;"><a href="/product?id={{this._id}}">
+                            <h2 style="">{{this.title}}</h2></a>
+                            <div class="wcmp-price"><span class="price" style=""><span class="woocommerce-Price-amount amount">{{this.rateRUB}} <span class="woocommerce-Price-currencySymbol"><span class=rur >&#x440;<span>&#x443;&#x431;.</span></span></span></span></span></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+            {{/each}}
+
+
+
+
+
+
+
+
+
+
+
+        </div></div><script>
+            jQuery(document).ready(function(){
+                var columns = jQuery("#woo-carousel-591d3fb3ea799 > .woocomposer").data("columns");
+                var slides_scroll_opt = "auto";
+                var slides_to_scroll;
+                if(slides_scroll_opt == "custom"){
+                    slides_to_scroll = 1;
+                } else {
+                    slides_to_scroll = columns;
+                }
+                var inline_vc = jQuery(".woocomposer_carousel").find(".wcmp_vc_inline").length;
+
+                if(inline_vc == 0){
+                    jQuery("#woo-carousel-591d3fb3ea799 > .woocomposer").slick({
+                        infinite: true,
+                        slidesToShow: columns,
+                        slidesToScroll: slides_to_scroll,
+                        speed: 1000,
+                        dots: false,
+                        autoplay: false,
+                        autoplaySpeed: 500,
+                        responsive: [{
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                infinite: true,
+                                dots: true
+                            }
+                        }, {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        }, {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }]
+                    });
+                }
+
+                var carousel_set = "{infinite: true,\
+								slidesToShow: columns,\
+								slidesToScroll: slides_to_scroll,\
+								speed: 1000,\
+								dots: false,\
+								autoplay: false,\
+								autoplaySpeed: 500,\
+								responsive: [{\
+									breakpoint: 1024,\
+									settings: {\
+										slidesToShow: 3,\
+										slidesToScroll: 3,\
+										infinite: true,\
+										dots: true\
+									}\
+								}, {\
+									breakpoint: 600,\
+									settings: {\
+										slidesToShow: 2,\
+										slidesToScroll: 2\
+									}\
+								}, {\
+									breakpoint: 480,\
+									settings: {\
+										slidesToShow: 1,\
+										slidesToScroll: 1\
+									}\
+								}]\
+							});}";
+                jQuery("#woo-carousel-591d3fb3ea799").attr("data-slick", carousel_set);
+            });
+            jQuery(window).load(function(){
+                //jQuery("[data-save=true]").trigger("click");
+            });
+        </script></div></div></div></section><section class="l-section wpb_row height_medium color_alternate imgsize_cover vc_row-fluid"><div class="l-section-h g-html i-cf"><div class="g-cols offset_small"><div class=" full-width"><div class="wpb_text_column "><div class="wpb_wrapper">
+            <h2 style="text-align: center;"><a href="/category?id={{stomatologLink._id}}">Стоматологические компрессоры</a></h2>
+            <p style="text-align: center; font-size: 16px;">Безмасляные, с ресивером и осушителем, обслуживание до 5 стоматологических кресел.</p>
+        </div> </div> </div></div></div></section><!-- Row Backgrounds --><div class="upb_bg_img" data-ultimate-bg="url(wp-content/uploads/2013/05/parallax-soliddent_5.jpg)" data-image-id="4349|wp-content/uploads/2013/05/parallax-soliddent_5.jpg" data-ultimate-bg-style="vcpb-vz-jquery" data-bg-img-repeat="repeat" data-bg-img-size="cover" data-bg-img-position="" data-parallx_sense="30" data-bg-override="0" data-bg_img_attach="scroll" data-upb-overlay-color="" data-upb-bg-animation="" data-fadeout="" data-bg-animation="left-animation" data-bg-animation-type="h" data-animation-repeat="repeat" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false"  data-custom-vc-row=""  data-vc="4.5.1"  data-theme-support=""   data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""    ></div><section class="l-section wpb_row height_medium color_custom imgsize_cover vc_row-fluid" style="background-color: #ffffff;color: #000000;"><div class="l-section-h g-html i-cf"><div class="g-cols offset_small"><div class=" full-width"><div class="wpb_text_column "><div class="wpb_wrapper">
+
+
+            <h2 style="text-align: center;">Наши преимущества.</h2>
+        </div> </div> </div></div></div></section><section class="l-section wpb_row height_medium color_custom imgsize_cover vc_row-fluid" style="background-color: #ffffff;color: #000000;"><div class="l-section-h g-html i-cf"><div class="g-cols offset_small"><div class=" one-half"><div class="wpb_text_column "><div class="wpb_wrapper"><img class="alignnone size-full wp-image-3737" src="wp-content/uploads/mainPic.jpg" alt="Монтаж компрессоров BOGE от ККТ" width="600" height="450" /><br />
+        </div> </div> </div><div class=" one-half"><div class="wpb_text_column "><div class="wpb_wrapper">
+            <p style="text-align: left;">Компания Энерготехника - официальный представитель BOGE в России и СНГ, предлагает поставку и сервис надежных компрессоров, фильтров, осушителей сжатого воздуха, конденсатоотводчиков, генераторов азота и кислорода. Благодаря оперативности, гибкости исполнения заданий и сервису по демократическим ценам огромное количество промышленных предприятий стали нашими постоянными Заказчиками.</p>
+        </div> </div> <div class="wpb_text_column "><div class="wpb_wrapper">
+            <p style="text-align: left;">Компрессоры  и осушители SOLIDair (второй бренд немецкой компании BOGE) - надежное компрессорное оборудование по еще более демократичным ценам.</p>
+        </div> </div> <div class="wpb_text_column "><div class="wpb_wrapper"><p>Компания Энерготехника обеспечивает гарантированное сервисное обслуживание всех поставленных компрессоров, обеспечивает бесперебойное снабжение запчастями, фильтрами и маслами со своих складов в России, оперативное сервисное реагирование, постоянную бесплатную техническую поддержку своих Заказчиков.</p>
+           </div> </div> </div></div></div></section><section class="l-section wpb_row height_medium imgsize_cover vc_row-fluid"><div class="l-section-h g-html i-cf"><div class="g-cols offset_small"><div class=" full-width"><div class="wpb_text_column "><div class="wpb_wrapper">
+            <h3>Наши клиенты:</h3>
+            <div class="clients">
+
+
+                {{#each clients}}
+
+
+                    <img id="{{this._id}}" src="{{this.img}}" alt="{{this.title}}" width="58" height="71" />
+
+
+
+
+
+                {{/each}}
+
+
+
+        </div> </div> </div></div></div></section>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    (function($){
+        $(document).ready(function(){
+
+
+            {{#each clients}}
+
+                $("#{{this._id}}").webuiPopover({
+                    placement: "top",
+                    //title: "Заголовок",
+                    content: "{{this.title}}",
+                    trigger: "hover",
+                    delay: {
+                        show: 1,
+                        hide: 300
+                    }
+                });
+
+
+
+            {{/each}}
+
+
+
+
+
+
+
+
+
+
+        });
+    })(this.jQuery);
+</script>

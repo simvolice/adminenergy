@@ -1,0 +1,44 @@
+<div class="row" ng-controller="footerCtrl as ctrl" ng-cloak>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header" data-background-color="orange">
+
+                <h3 class="title">{{ctrl.title}}</h3>
+            </div>
+            <div class="card-content">
+
+
+                    <md-input-container class="md-block">
+                        <label>Футер</label>
+                        <textarea rows="5" placeholder="Придумай интересный футер..." ng-model="ctrl.titlefooter" autofocus></textarea>
+                    </md-input-container>
+
+
+
+
+
+
+                    <div class="col-md-1">
+
+                        <md-button class="md-raised md-primary" ng-click="ctrl.saveFooter()">Сохранить</md-button>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
