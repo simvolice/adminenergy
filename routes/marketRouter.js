@@ -253,73 +253,69 @@ router.post('/update', checkSeesionToken, async (req, res, next) =>{
 
 
 
-router.post('/deleteproduct', checkSeesionToken, function(req, res, next){
-
-  let objParams = req.body.arrid;
+router.post('/deleteproduct', checkSeesionToken, async (req, res, next) =>{
 
 
 
-  objParams.forEach(function (id) {
 
-    MarketService.deleteProduct(id._id);
-
-
-  });
+  for (let obj of req.body.arrid) {
+    await MarketService.deleteProduct(obj._id);
+  }
 
 
   res.json({"code": "ok"});
 
-});
-
-
-
-
-
-
-router.get('/products', function(req, res, next){
-
-
-
-  MarketService.getAllProduct().then(function (result) {
-    res.json({"code": "ok", "resultFromDb": result});
-  });
-
-
 
 
 });
 
 
-router.get('/getcateg', function(req, res, next){
-
-  CategoryService.getAllCategory().then(function (result) {
-
-
-    result.forEach(function (item) {
-
-      if (item.subcategory !== null) {
-
-        item.subcategory.forEach(function (itemSubID) {
 
 
 
-          itemSubID.category = item._id;
+
+router.get('/products', async (req, res, next) =>{
 
 
-        });
+
+  let result = await MarketService.getAllProduct();
+
+  res.json({"code": "ok", "resultFromDb": result});
+
+
+
+
+
+});
+
+
+router.get('/getcateg', async (req, res, next) =>{
+
+
+  let result = await CategoryService.getAllCategory();
+
+
+  for (let item of result) {
+    if (item.subcategory !== null) {
+
+      for (let itemSubID of item.subcategory) {
+
+
+        itemSubID.category = item._id;
+
 
       }
 
 
+    }
 
-
-    });
+  }
 
 
 
 
     res.json({"code": "ok", "resultFromDb": result});
-  });
+
 
 
 });

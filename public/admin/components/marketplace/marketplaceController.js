@@ -150,8 +150,8 @@ angular.module('app').controller('MarketplaceCtrl', function ($scope, $ocLazyLoa
         GetAllProduct.get(function (result) {
 
 
-          self.selected = [];
-          self.data = result.resultFromDb;
+          $rootScope.selected = [];
+          $rootScope.data = result.resultFromDb;
 
 
         });

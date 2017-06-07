@@ -232,7 +232,7 @@
                                     <div class="md-toolbar-tools">
                                         <span>{{$root.selected.length}} {{$root.selected.length > 1 ? 'товаров' : 'товар'}} выбрана</span>
                                         <span flex></span>
-                                        <md-button class="md-icon-button" ng-click="ctrl.delete(ctrl.selected)">
+                                        <md-button class="md-icon-button" ng-click="ctrl.delete($root.selected)">
                                             <i class="material-icons">delete</i>
                                         </md-button>
 
