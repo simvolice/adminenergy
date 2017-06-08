@@ -361,7 +361,7 @@ router.post('/addclients', checkSeesionToken, async (req, res, next) =>{
 
 
   resultFromClient.files.forEach(function (item) {
-     if(path.extname(item.path)  === ".jpg" || path.extname(item.path)  === ".png"){
+     if(path.extname(item.path)  === ".jpg" || path.extname(item.path)  === ".png" || path.extname(item.path)  === ".jpeg"){
 
       fsExtra.moveSync(item.path, path.join(__dirname, "../public/uploads/" + path.basename(item.path)));
 
