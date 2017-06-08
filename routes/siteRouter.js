@@ -307,7 +307,7 @@ router.get('/orderfromsite', function(req, res, next){
 
 
   let mail = {
-    from: "2518743@mail.ru",
+    from: "simvolice@gmail.com",
     to: "2518743@mail.ru",
     subject: "Заявка с сайта energotechnica.ru",
 
