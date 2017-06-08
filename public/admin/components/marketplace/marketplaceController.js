@@ -195,7 +195,8 @@ angular.module('app').controller('MarketplaceCtrl', function ($scope, $ocLazyLoa
 
 
     formdata.append('title', self.titleproduct);
-    formdata.append('text', quill.root.outerHTML);
+    formdata.append('textDelta', JSON.stringify(quill.getContents()));
+    formdata.append('textHtml', quill.root.outerHTML);
     formdata.append('category', self.userCategory);
     formdata.append('subcategory', self.userSubCategory);
     formdata.append('rate', self.rate);
@@ -269,8 +270,48 @@ angular.module('app').controller('MarketplaceCtrl', function ($scope, $ocLazyLoa
     });
   };
 
-  function DialogController($scope, $mdDialog, dataToPass, categorys, subCategory, $cookies, $http, $mdToast, $rootScope, GetAllProduct) {
+  function DialogController($ocLazyLoad, $scope, $mdDialog, dataToPass, categorys, subCategory, $cookies, $http, $mdToast, $rootScope, GetAllProduct) {
 
+    function load_js()
+    {
+      var head= document.getElementsByTagName('head')[0];
+      var script= document.createElement('script');
+      script.type= 'text/javascript';
+      script.src= '../admin/assets/js/quilInitUpdate.js';
+      head.appendChild(script);
+    }
+
+
+
+
+      load_js();
+
+      setTimeout(function () {
+
+        var detectHtml = /<(\w+)[^>]+>[^>]/;
+
+
+
+        if (detectHtml.test(dataToPass[0].description)) {
+
+          quillUpdate.setContents(dataToPass[0].descriptionDelta);
+
+        } else {
+
+
+          quillUpdate.setText(dataToPass[0].description + "\n");
+
+
+        }
+
+
+
+
+
+
+
+
+        }, 2000);
 
 
 
@@ -285,7 +326,7 @@ angular.module('app').controller('MarketplaceCtrl', function ($scope, $ocLazyLoa
 
 
     $scope.titleproduct = dataToPass[0].title;
-    $scope.textproduct = dataToPass[0].description;
+
 
 
 
@@ -298,7 +339,7 @@ angular.module('app').controller('MarketplaceCtrl', function ($scope, $ocLazyLoa
 
     $scope.column = dataToPass[0].column;
     $scope.valueForColumn = dataToPass[0].valueForColumn;
-    $scope.fourProduct = dataToPass[0].fourProduct;
+    $scope.units = dataToPass[0].units;
 
 
 
@@ -320,9 +361,11 @@ angular.module('app').controller('MarketplaceCtrl', function ($scope, $ocLazyLoa
 
 
 
+
       formdata.append('id', $scope.id );
       formdata.append('title', $scope.titleproduct);
-      formdata.append('text', $scope.textproduct);
+      formdata.append('textHtml', quillUpdate.root.outerHTML);
+      formdata.append('textDelta', JSON.stringify(quillUpdate.getContents()));
       formdata.append('category', $scope.userCategory);
       formdata.append('subcategory', $scope.userSubCategory);
       formdata.append('rate', $scope.rate);

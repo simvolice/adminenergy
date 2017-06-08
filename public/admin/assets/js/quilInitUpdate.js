@@ -4,14 +4,14 @@
 
 
 
-var quill = new Quill('#editor-container', {
+
+
+var quillUpdate = new Quill('#editor-container-update', {
   modules: {
 
-    toolbar: '#toolbar-container'
+    toolbar: '#toolbar-container-update'
   },
   placeholder: 'Создай свою идеальную статью...',
   theme: 'snow'
 });
-
-
 

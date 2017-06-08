@@ -51,7 +51,8 @@ router.post('/addproduct', checkSeesionToken, async (req, res, next) =>{
   let objParams = {
 
     title : resultFromClient.fields.title,
-    description : resultFromClient.fields.text,
+    description : resultFromClient.fields.textHtml,
+    descriptionDelta : JSON.parse(resultFromClient.fields.textDelta),
     categorys: ObjectId(resultFromClient.fields.category),
     subcategory: Int32(resultFromClient.fields.subcategory),
     rate: Decimal128.fromString(resultFromClient.fields.rate + ".00"),
@@ -147,6 +148,10 @@ router.post('/update', checkSeesionToken, async (req, res, next) =>{
 
 
 
+
+
+
+
  let id = resultFromClient.fields.id;
 
   let objParams = {
@@ -154,7 +159,8 @@ router.post('/update', checkSeesionToken, async (req, res, next) =>{
 
 
     title : resultFromClient.fields.title,
-    description : resultFromClient.fields.text,
+    description : resultFromClient.fields.textHtml,
+    descriptionDelta : JSON.parse(resultFromClient.fields.textDelta),
     categorys: ObjectId(resultFromClient.fields.category),
     subcategory: Int32(resultFromClient.fields.subcategory),
     rate: Decimal128.fromString(resultFromClient.fields.rate),
