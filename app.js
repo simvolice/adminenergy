@@ -96,7 +96,7 @@ app.use(function (req, res, next) {
 
 
 
-app.locals.yearCopyright = new Date().getFullYear();
+
 
 CategoryService.getAllCategory().then(function (result) {
   app.locals.categorys = result;
@@ -105,11 +105,7 @@ CategoryService.getAllCategory().then(function (result) {
 });
 
 
-FooterService.get().then(function (result) {
-  app.locals.footer = result.text;
 
-
-});
 
 
 

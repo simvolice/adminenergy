@@ -9,6 +9,7 @@ const router = express.Router();
 const CategoryService = require('../services/CategoryService');
 const MarketService = require('../services/MarketService');
 const ClientsService = require('../services/ClientsService');
+const FooterService = require('../services/FooterService');
 const convertCurrency = require('../utils/convertCurrency');
 const config = require('../utils/devConfig');
 const nodemailer = require('nodemailer');
@@ -88,8 +89,9 @@ router.get('/', async (req, res, next) =>{
 
 
 
-
-
+  let copyText = await FooterService.get();
+  res.locals.yearCopyright = new Date().getFullYear();
+  res.locals.footer = copyText.text;
 
   res.locals.titleSite = "Компрессоры SOLIDair - продажа, монтаж, обслуживание";
   res.locals.descriptionSite = "Официальный представитель SOLIDair в России, безмасляные компрессоры для стоматологий, небольших предприятий и заводов по низкой цене.";
@@ -105,6 +107,9 @@ router.get('/', async (req, res, next) =>{
 
 router.get('/contact', async (req, res, next) =>{
 
+  let copyText = await FooterService.get();
+  res.locals.yearCopyright = new Date().getFullYear();
+  res.locals.footer = copyText.text;
 
   res.locals.titleSite = "Компрессоры SOLIDair - продажа, монтаж, обслуживание";
   res.locals.descriptionSite = "Официальный представитель SOLIDair в России, безмасляные компрессоры для стоматологий, небольших предприятий и заводов по низкой цене.";
@@ -149,6 +154,9 @@ router.get('/category', async (req, res, next) =>{
     }
 
 
+    let copyText = await FooterService.get();
+    res.locals.yearCopyright = new Date().getFullYear();
+    res.locals.footer = copyText.text;
 
     res.locals.titleSite = categoryResultById.name;
     res.locals.descriptionSite = categoryResultById.description;
@@ -175,6 +183,9 @@ router.get('/category', async (req, res, next) =>{
     await getRateRub(resultProduct);
 
 
+    let copyText = await FooterService.get();
+    res.locals.yearCopyright = new Date().getFullYear();
+    res.locals.footer = copyText.text;
 
     res.locals.titleSite = categoryResultById.name;
     res.locals.descriptionSite = categoryResultById.description;
@@ -213,6 +224,9 @@ router.get('/grid', async (req, res, next) =>{
 
       resultCat.subcategory = item;
 
+      let copyText = await FooterService.get();
+      res.locals.yearCopyright = new Date().getFullYear();
+      res.locals.footer = copyText.text;
 
       res.locals.titleSite = item.name;
       res.locals.descriptionSite = resultCat.description;
@@ -280,6 +294,9 @@ router.get('/product', async (req, res, next) =>{
   await getRateRub(allProductByCategID);
 
 
+  let copyText = await FooterService.get();
+  res.locals.yearCopyright = new Date().getFullYear();
+  res.locals.footer = copyText.text;
 
   res.locals.titleSite = result.title;
   res.locals.descriptionSite = result.description;
@@ -328,6 +345,9 @@ router.get('/search', async (req, res, next) =>{
   let resultSearch = await MarketService.getProductBySearch(req.query.s);
 
 
+  let copyText = await FooterService.get();
+  res.locals.yearCopyright = new Date().getFullYear();
+  res.locals.footer = copyText.text;
 
   res.locals.titleSite = "Вы искали " + req.query.s + " | Компания Энерготехника";
   res.locals.descriptionSite = "Официальный представитель SOLIDair в России, безмасляные компрессоры для стоматологий, небольших предприятий и заводов по низкой цене.";
@@ -343,6 +363,9 @@ router.get('/search', async (req, res, next) =>{
 });
 
 router.get('/about', async (req, res, next) =>{
+  let copyText = await FooterService.get();
+  res.locals.yearCopyright = new Date().getFullYear();
+  res.locals.footer = copyText.text;
 
   res.locals.titleSite = "Компрессоры SOLIDair - продажа, монтаж, обслуживание";
   res.locals.descriptionSite = "Официальный представитель SOLIDair в России, безмасляные компрессоры для стоматологий, небольших предприятий и заводов по низкой цене.";
