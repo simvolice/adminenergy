@@ -29,7 +29,7 @@ angular.module('app').controller('MarketplaceCtrl', function ($scope, $ocLazyLoa
 
 
 
-  }, 1000);
+  }, 2000);
 
 
 
