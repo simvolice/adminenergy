@@ -33,21 +33,26 @@ module.exports = {
 
 
 
-      let response = await request('http://www.cbr.ru/scripts/XML_daily.asp');
+      let response = await request('http://api.fixer.io/latest?symbols=RUB');
+
+
+
+      if (response.statusCode === 200) {
+
+        return JSON.parse(response.body);
+
+      } else {
+
+
+        return false;
+
+
+      }
 
 
 
 
-       let parseResult = await xml2json(response.body);
 
-
-
-
-
-
-
-
-      return parseResult;
 
      } catch (err) {
 

@@ -26,33 +26,30 @@ async function getRateRub(resultProduct) {
 
 
 
-  if (resultExchangeRate.ValCurs !== undefined) {
+
+  if (resultExchangeRate !== false) {
 
 
-
-    for (let i of resultExchangeRate.ValCurs.Valute) {
-
-
-      if (i.CharCode[0] === "EUR" && Array.isArray(resultProduct)) {
+      if (Array.isArray(resultProduct)) {
 
 
         for (let itemProduct of resultProduct) {
 
-          itemProduct.rateRUB = itemProduct.rate * parseFloat(i.Value[0]);
+          itemProduct.rateRUB = itemProduct.rate * parseFloat(resultExchangeRate.rates.RUB).toFixed(2);
         }
 
 
       } else {
 
 
-        resultProduct.rateRUB = resultProduct.rate * parseFloat(i.Value[0]);
-        resultProduct.dateRate = resultExchangeRate.ValCurs.$.Date;
+        resultProduct.rateRUB = resultProduct.rate * parseFloat(resultExchangeRate.rates.RUB).toFixed(2);
+        resultProduct.dateRate = resultExchangeRate.date;
 
 
       }
 
 
-    }
+
 
 
   } else {
